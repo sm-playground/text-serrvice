@@ -1,0 +1,37 @@
+[package]
+name = "hackathon-api"
+version = "0.1.0"
+authors = ["Samvel Mirijanyan <samvel.mirijanyan@sage.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+# actix web server and runtime
+actix-web = "2.0"
+actix-rt = "1.0"
+
+# Listener, required to to work with listenfds passed from the outside (systemd/catflap socket activation)
+listenfd = "0.3"
+
+# Support for environment variables and logging
+dotenv = "0.11"
+log = "0.4"
+env_logger = "0.6"
+
+# Json serializer
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+
+# Powerful date and time functionality
+chrono = { version = "0.4", features = ["serde"] }
+
+# Lazy static initialization
+lazy_static = "1.4"
+
+# ORM and DB connection pool
+diesel = { version = "1.4", features = ["postgres", "mysql", "r2d2", "chrono"] }
+diesel_migrations = "1.4"
+r2d2 = "0.8"
